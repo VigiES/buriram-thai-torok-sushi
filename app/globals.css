@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f9f8f4; }
+* { box-sizing: border-box; }
+::selection { background: #cbd9c4; color: #17231c; }
+.eyebrow { font-size: 10px; line-height: 1; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #6a796d; }
+.contact-label { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #6a796d; }
+.map-grid { background-image: linear-gradient(#b5bdae 1px, transparent 1px), linear-gradient(90deg, #b5bdae 1px, transparent 1px), linear-gradient(45deg, transparent 47%, #a6b299 48%, #a6b299 52%, transparent 53%); background-size: 52px 52px, 52px 52px, 125px 125px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
