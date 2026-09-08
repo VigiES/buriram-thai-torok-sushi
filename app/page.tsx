@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { FiveMark } from "./components/five-mark";
 import { RestaurantMenu } from "./components/restaurant-menu";
 
 const nav = ["Accueil", "Menu", "À propos", "Avis", "Contact"];
@@ -19,7 +20,7 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#151914]/20 bg-[#f4efe5]">
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#accueil" className="leading-none" aria-label="Buriram Thaï Food & Torok Sushi, accueil">
-            <span className="block text-[10px] font-bold tracking-[.27em] text-[#315e57]">BURIRAM</span>
+            <span className="flex items-center gap-2 text-[#315e57]"><span className="buriram-wordmark">BURIRAM</span><FiveMark className="five-mark--header" /></span>
             <span className="mt-1 block font-serif text-lg italic tracking-tight">Thaï Food <em className="not-italic text-[#df5639]">&</em> Torok Sushi</span>
           </a>
           <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
@@ -52,6 +53,7 @@ export default function Home() {
           <div className="order-2 flex items-end px-5 py-14 sm:py-20 lg:order-1 lg:col-span-5 lg:px-8 lg:py-16">
             <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.1 }} className="max-w-xl">
               <motion.p variants={reveal} className="mb-7 text-[10px] font-bold uppercase tracking-[.25em] text-[#315e57]">Thaïlandais · Sushi · Nogent-le-Rotrou</motion.p>
+              <motion.div variants={reveal} className="mb-7 flex items-end gap-5 text-[#df5639]"><span aria-hidden="true" className="buriram-wordmark buriram-wordmark--hero">BURIRAM</span><FiveMark className="five-mark--hero" /></motion.div>
               <motion.h1 variants={reveal} className="font-serif text-[clamp(3.45rem,8vw,6.6rem)] leading-[.86] tracking-[-.075em]">Cuisine thaïlandaise<br /><i className="font-normal">authentique</i> & Sushi frais</motion.h1>
               <motion.p variants={reveal} className="mt-8 max-w-md text-base leading-relaxed text-[#315e57] lg:text-lg">Saveurs traditionnelles, recettes maison et sushi préparés avec soin au cœur de Nogent-le-Rotrou.</motion.p>
               <motion.div variants={reveal} className="mt-10 flex flex-wrap gap-3">
@@ -87,7 +89,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid border-t border-[#151914]/25 pt-7 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <p className="eyebrow">Vos mots</p>
+              <p className="eyebrow flex items-center gap-3"><FiveMark className="five-mark--section text-[#df5639]" />Vos mots</p>
               <h2 className="mt-5 font-serif text-6xl leading-none tracking-[-.06em]">Adoré ici.</h2>
               <div className="mt-12 border-l-2 border-[#df5639] pl-5">
                 <p className="text-[10px] font-bold uppercase tracking-[.18em]">Note Google</p>
@@ -96,13 +98,14 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-12 border-t border-[#151914]/25 lg:col-span-8 lg:mt-0">
-              {["Des sushi excellents, d’une fraîcheur remarquable.", "Des plats thaïlandais maison généreux à des prix très raisonnables.", "Une adresse cachée à découvrir à Nogent-le-Rotrou."].map((review, i) => (
+              {["Les sushis sont vraiment excellents, d’une très belle qualité, et proposés à un prix plus que raisonnable. Une belle adresse à retenir !", "Quel plaisir que cette ouverture ! Une cuisine maison généreuse et de très haute qualité le tout à un prix plus que raisonnable.", "Petit restaurant par sa taille, grand par le goût !"].map((review, i) => (
                 <motion.figure initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} key={review} className="grid gap-6 border-b border-[#151914]/25 py-8 sm:grid-cols-[5rem_minmax(0,1fr)_auto] sm:items-start sm:gap-8">
                   <div className="text-sm tracking-[.1em] text-[#df5639]">★★★★★</div>
                   <blockquote className="font-serif text-2xl leading-[1.2] tracking-[-.025em] sm:text-3xl">“{review}”</blockquote>
                   <figcaption className="text-[10px] font-bold uppercase tracking-[.16em] text-[#315e57]">Avis Google</figcaption>
                 </motion.figure>
               ))}
+              <a href="https://www.google.com/maps/place/Buriram+Tha%C3%AF+food+%26+Torok+sushi/@48.3226947,0.821032,17z/data=!4m17!1m8!3m7!1s0x47e3b736e99d0e51:0xf6edda9d63249db2!2splace+du+g%C3%A9n%C3%A9ral,+10+Place+St+Pol,+28400+Nogent-le-Rotrou!3b1!8m2!3d48.3226947!4d0.821032!16s%2Fg%2F11c4dp5cxt!3m7!1s0x47e3b71851543011:0xe92a88a288095904!8m2!3d48.3226956!4d0.8210357!9m1!1b1!16s%2Fg%2F11xw9c_6m0?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block border border-[#151914] bg-[#151914] px-5 py-3.5 text-[11px] font-bold uppercase tracking-[.14em] text-[#f4efe5] transition hover:-translate-y-0.5 hover:border-[#df5639] hover:bg-[#df5639]">Voir tous les avis Google<Arrow /></a>
             </div>
           </div>
         </div>
@@ -111,7 +114,7 @@ export default function Home() {
       <section id="contact" className="bg-[#315e57] px-5 py-20 text-[#f4efe5] lg:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="text-[10px] font-bold uppercase tracking-[.22em] text-[#f2a18b]">Nous trouver</p>
+            <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.22em] text-[#f2a18b]"><FiveMark className="five-mark--section" />Nous trouver</p>
             <h2 className="mt-5 font-serif text-5xl leading-[.94] tracking-[-.055em] lg:text-6xl">Venez partager un moment.</h2>
             <div className="mt-12 grid gap-9 border-t border-[#f4efe5]/35 pt-7 sm:grid-cols-2">
               <div>
@@ -152,7 +155,7 @@ export default function Home() {
       <footer className="bg-[#151914] px-5 py-12 text-[#f4efe5] lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 border-t border-[#f4efe5]/35 pt-7 md:grid-cols-[1fr_auto] md:items-end">
           <div>
-            <p className="font-serif text-3xl italic tracking-[-.03em]">Buriram Thaï Food <span className="not-italic text-[#df5639]">&</span> Torok Sushi</p>
+            <p className="flex items-center gap-4 font-serif text-3xl italic tracking-[-.03em]"><FiveMark className="five-mark--footer shrink-0 text-[#df5639]" />Buriram Thaï Food <span className="not-italic text-[#df5639]">&</span> Torok Sushi</p>
             <p className="mt-4 text-xs leading-relaxed text-[#b9cdc7]">10 Place du Général Saint-Pol · 28400 Nogent-le-Rotrou</p>
           </div>
           <div className="flex gap-6 text-[10px] font-bold uppercase tracking-[.15em]">

@@ -9,4 +9,13 @@ body { margin: 0; background: #f4efe5; }
 .eyebrow { font-size: 10px; line-height: 1; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #315e57; }
 .contact-label { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #315e57; }
 .editorial-rule { border-color: rgba(21, 25, 20, .22); }
+.buriram-wordmark { font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif; font-size: 10px; font-weight: 800; letter-spacing: .31em; line-height: 1; text-transform: uppercase; }
+.buriram-wordmark--hero { font-size: clamp(1.7rem, 4vw, 3.8rem); letter-spacing: .22em; }
+.five-mark { display: inline-flex; align-items: flex-end; gap: .16em; height: 1.08em; color: currentColor; line-height: 1; }
+.five-mark > span { display: block; flex: 0 0 auto; background: currentColor; transform-origin: bottom center; }
+.five-mark--header { font-size: 15px; }
+.five-mark--hero { font-size: clamp(2.15rem, 5vw, 4.8rem); }
+.five-mark--section { font-size: 16px; }
+.five-mark--menu { font-size: 14px; }
+.five-mark--footer { font-size: 22px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }

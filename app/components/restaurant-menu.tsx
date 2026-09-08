@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FiveMark } from "./five-mark";
 import { menuCategories, type MenuCategory } from "../menu-data";
 
 function MenuCategoryList({ category }: { category: MenuCategory }) {
   return (
     <article className="border-t border-[#f4efe5]/35 pt-5">
-      <h3 className="font-serif text-4xl italic tracking-[-0.04em] text-[#f4efe5]">{category.title}</h3>
+      <h3 className="flex items-end justify-between gap-5 font-serif text-4xl italic tracking-[-0.04em] text-[#f4efe5]"><span>{category.title}</span><FiveMark className="five-mark--menu shrink-0 text-[#df5639]" /></h3>
       <ul className="mt-6 divide-y divide-[#f4efe5]/20">
         {category.items.map((item) => (
           <li key={`${item.name}-${item.detail ?? ""}-${item.price}`} className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-5 py-3.5 sm:py-4">
@@ -33,7 +34,7 @@ export function RestaurantMenu() {
           className="grid gap-4 border-b border-[#f4efe5]/35 pb-8 sm:grid-cols-[1fr_auto] sm:items-end sm:gap-8 sm:text-left"
         >
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#f2a18b]">Buriram Thaï Food & Torok Sushi</p>
+            <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.24em] text-[#f2a18b]"><FiveMark className="five-mark--menu" />Buriram Thaï Food & Torok Sushi</p>
             <h2 id="menu-title" className="mt-4 font-serif text-6xl tracking-[-0.07em] text-[#f4efe5] sm:text-7xl">MENU</h2>
           </div>
           <p className="text-sm text-[#b9cdc7] sm:pb-2">Sur place ou à emporter</p>
